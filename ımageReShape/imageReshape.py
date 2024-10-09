@@ -1,14 +1,14 @@
 import cv2
 
-# resize and cropping
-img = cv2.imread("Lenna_(test_image).png")
-print("Resim boyutu: ", img.shape)
-cv2.imshow("Orjinal", img)
+img = cv2.imread("lenna.png",0) # ikinci parametreyi vermezsen görüntü ekrana renkli yansiyacaktir.
+                                #ikinci parametre 0 oldugunda ise goruntu siyah beyaz formatta olacaktir.
+print("resim boyutu: ", img.shape) # shape fonksiyonu ile resmin pixel boyutlarini ogreniyoruz 
+cv2.imshow("orijinal", img) # burada image i ismi ile ekrana süren komutu yazıyoruz
 
-imgResized = cv2.resize(img,(1024,1024))
-print("Yeniden boyutlandırılan resim boyutu: ",imgResized.shape)
-cv2.imshow("Image Resized", imgResized)
+imgResized= cv2.resize(img, (800,800))  # herhangi bir resmi yeniden boyutlandırmanın kodu enteresan doğrusu ilk defa yapan için
+print("Resmin yeni boyutu: ", imgResized.shape)  #burada yeni resmimizin boyutları doğru mu diye kontrol ediyoruz
 
-# Crop
-imgCropped = img[0:400,0:400] 
-cv2.imshow("Kırpılan resim boyutu: ", imgCropped)
+cv2.imshow("Resize edilmis yeni goruntu: ", imgResized) # burada da yeniden boyutlandırılmış görselin çıktısı var.
+
+
+# Simdi de kırpma kısmını bir inceleyelim 

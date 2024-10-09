@@ -12,3 +12,7 @@ cv2.imshow("Resize edilmis yeni goruntu: ", imgResized) # burada da yeniden boyu
 
 
 # Simdi de kırpma kısmını bir inceleyelim 
+
+imgCropped= img[:100,:400]  #ilk piksel kısmı boyunu ikinci piksel kısmı ise enini belirtiyor.
+
+cv2.imshow("Croplalnmis resim:", imgCropped) # kirpilmis verinin ekrana suruldugu yer

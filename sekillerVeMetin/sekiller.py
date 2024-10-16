@@ -30,3 +30,7 @@ cv2.imshow("circle", img)
 #bu parametreleri de inceleyelim (resim, başlangıc noktası , font , kalınlığı  , renk )
 cv2.putText(img, "ComputerVisuon", (100,350), cv2.FONT_HERSHEY_COMPLEX, 1, (255,255,255))
 cv2.imshow("metin belgesi cikarilmis hal", img)
+
+img2 = np.zeros((512,512,3), np.uint8)
+cv2.putText(img2, "ComputerVisuon", (0,25), cv2.FONT_HERSHEY_COMPLEX, 1, (255,255,255))
+cv2.imshow("metin belgesi nereden basliyor?",img2)

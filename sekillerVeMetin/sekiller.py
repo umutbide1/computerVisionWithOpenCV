@@ -25,3 +25,8 @@ cv2.imshow("dikdortgen", img)                               # kalinlik eklemek i
 # bu fonksiyonda ise parametreler şu şekilde (resim, baslangic noktasi yani merkez, yaricap, renk  )
 cv2.circle(img, (300,300), 45, (0,0,255), cv2.FILLED) # icerisini doldurma mantigi dikdortgen ile ayni 
 cv2.imshow("circle", img)
+
+#metin ekleme kismi 
+#bu parametreleri de inceleyelim (resim, başlangıc noktası , font , kalınlığı  , renk )
+cv2.putText(img, "ComputerVisuon", (100,350), cv2.FONT_HERSHEY_COMPLEX, 1, (255,255,255))
+cv2.imshow("metin belgesi cikarilmis hal", img)

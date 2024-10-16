@@ -12,6 +12,12 @@ print("Şeklin boyutu: ",img.shape)    # resmin boyutunu doğru ayarlamış mıy
 # resime çizgi ekleme konusunu ele alıyoruz
 # sırasıyla (resim,baslangic noktasi,bitis noktasi,renk,kalinlik)
 # renk muhabbetinde openCV de şu muhabbet var renk RGB değil de BGR şeklinde ilerliyor
-cv2.line(img,(0,0),(512,512),(255,0,0),(5))      
-cv2.imshow("Çizgi", img)           
+cv2.line(img,(100,100),(200,200),(255,255,0),(5))
+cv2.imshow("Cizgi", img)
+
+#dikdortgen olusturmaya basliyoruz
+#rectangle fonksiyonu ingilizcesinden de anlasilabilecegi uzere dikdortgen ciziminde kullaniliyor 
+# siralamasi su sekilde (resim, baslangic pixeli,bitis pixeli, renk, kalinlik)
+cv2.rectangle(img, (0,0),(256,256) , (255,0,0),5)
+cv2.imshow("dikdortgen", img)
 

@@ -18,6 +18,6 @@ cv2.imshow("Cizgi", img)
 #dikdortgen olusturmaya basliyoruz
 #rectangle fonksiyonu ingilizcesinden de anlasilabilecegi uzere dikdortgen ciziminde kullaniliyor 
 # siralamasi su sekilde (resim, baslangic pixeli,bitis pixeli, renk, kalinlik)
-cv2.rectangle(img, (0,0),(256,256) , (255,0,0),5)
-cv2.imshow("dikdortgen", img)
+cv2.rectangle(img, (0,0),(256,256) , (255,0,0), cv2.FILLED) # cv2.FILLED ile dikdortgenin icerisini doldurabiliriz
+cv2.imshow("dikdortgen", img)                               # kalinlik eklemek istersem cv2.FILLED yerine direk kalınlik pixelini yazabilirim (5 gibi)
 

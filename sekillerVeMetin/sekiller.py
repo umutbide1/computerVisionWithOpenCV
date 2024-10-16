@@ -21,3 +21,7 @@ cv2.imshow("Cizgi", img)
 cv2.rectangle(img, (0,0),(256,256) , (255,0,0), cv2.FILLED) # cv2.FILLED ile dikdortgenin icerisini doldurabiliriz
 cv2.imshow("dikdortgen", img)                               # kalinlik eklemek istersem cv2.FILLED yerine direk kalınlik pixelini yazabilirim (5 gibi)
 
+# cember kismini inceleyelim
+# bu fonksiyonda ise parametreler şu şekilde (resim, baslangic noktasi yani merkez, yaricap, renk  )
+cv2.circle(img, (300,300), 45, (0,0,255), cv2.FILLED) # icerisini doldurma mantigi dikdortgen ile ayni 
+cv2.imshow("circle", img)

@@ -8,3 +8,8 @@ cv2.imshow("Lenna", img)
 hor = np.hstack((img,img))
 cv2.imshow("Merged Image", hor)
 
+# dikey (vertical) birlestirme
+
+ver= np.vstack((img,img))
+cv2.imshow("Vertical Merged Images", ver)
+

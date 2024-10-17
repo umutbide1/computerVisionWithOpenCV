@@ -29,7 +29,11 @@ print(img2.shape)  # aynı bıyutta mı diye kontrol ediyoruz
 img1 = cv2.resize(img1, (1147,852))
 print(img1.shape)
 
-# karıştırma işlemi burada olacak
+# karıştırma işlemi burada olacak denklem mevcut. img1*alphaKatsayisi + img2*betaKatsayisi
+
+blendedImage = cv2.addWeighted(src1=img1, alpha=0.5, src2=img2, beta=0.5,gamma= 0)
+plt.figure()
+plt.imshow(blendedImage )
 
 
 

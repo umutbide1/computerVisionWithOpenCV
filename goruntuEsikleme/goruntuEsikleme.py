@@ -12,4 +12,8 @@ plt.show() # normalde bu yazılmasa bile Spyder ekrana görüntüyü alıyor ama
            # ama bu işlem cv2.imshow() da aynı değil cv2 de hem görüntüyü yerleştiriyor hemde ekrana basıyor
            # cv2 da görüntü formatı BGR matplotlib de ise RGB şeklinde 
            
+# şimdi fotoğrafın genlik değerini 0 255 den 0 60 çekeceğim
 
+_, thresh_img= cv2.threshold(img, thresh=60, maxval=255, type=cv2.THRTHRESH_BINARY_INV) # bu satırı aşağıda açıklıyorum
+# en sağda bulunan BINARY kısmında 60 la 255 arasındaki genlik değerlerini beyaz yapacak THRTHRESH_BINARY_INV kullansaydım 
+                                                                                        # tam tersi siyah yapardı

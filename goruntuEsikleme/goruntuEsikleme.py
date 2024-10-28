@@ -14,6 +14,12 @@ plt.show() # normalde bu yazılmasa bile Spyder ekrana görüntüyü alıyor ama
            
 # şimdi fotoğrafın genlik değerini 0 255 den 0 60 çekeceğim
 
-_, thresh_img= cv2.threshold(img, thresh=60, maxval=255, type=cv2.THRTHRESH_BINARY_INV) # bu satırı aşağıda açıklıyorum
+_, thresh_img= cv2.threshold(img, thresh=60, maxval=255, type=cv2.THRESH_BINARY) # bu satırı aşağıda açıklıyorum
 # en sağda bulunan BINARY kısmında 60 la 255 arasındaki genlik değerlerini beyaz yapacak THRTHRESH_BINARY_INV kullansaydım 
                                                                                         # tam tersi siyah yapardı
+plt.show()         
+plt.imshow(thresh_img, cmap="gray")
+plt.axis("off")                                                           
+
+img=cv2.resize(img,(800,600))
+cv2.imshow("anaResim", img)

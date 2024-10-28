@@ -160,49 +160,63 @@ from sklearn.datasets import load_iris
 
 
 
-import numpy as np
-import matplotlib.pyplot as plt
-from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
-from sklearn.datasets import load_iris
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score
+# import numpy as np
+# import matplotlib.pyplot as plt
+# from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
+# from sklearn.datasets import load_iris
+# from sklearn.model_selection import train_test_split
+# from sklearn.metrics import accuracy_score
 
 
 
-# Adım 1: Iris veri setinin yüklenmesi
-iris = load_iris()
-X = iris.data
-y = iris.target
+# # Adım 1: Iris veri setinin yüklenmesi
+# iris = load_iris()
+# X = iris.data
+# y = iris.target
 
 
-X_train, X_test, y_train, y_test =train_test_split(X,y, test_size=0.3,
-                                                   random_state=42)
+# X_train, X_test, y_train, y_test =train_test_split(X,y, test_size=0.3,
+#                                                    random_state=42)
 
-lda=LDA(n_components=2)
-X_train_lda =lda.fit_transform(X_train, y_train)
-X_test_lda=lda.transform(X_test)
-
-
-# LDA sonucunu görselleştirme
-plt.figure(figsize=(8, 6))
-for i in range(len(iris.target_names)):
-    plt.scatter(X_train_lda[y_train == i, 0],
-                X_train_lda[y_train == i, 1],
-                label=iris.target_names[i])
-
-plt.xlabel('LDA Component 1')
-plt.ylabel('LDA Component 2')
-plt.title('LDA on Iris Dataset')
-plt.legend()
-plt.show()
+# lda=LDA(n_components=2)
+# X_train_lda =lda.fit_transform(X_train, y_train)
+# X_test_lda=lda.transform(X_test)
 
 
-# Adım 5: LDA ile sınıflandırma
-lda_classifier = LDA()
-lda_classifier.fit(X_train_lda, y_train)  # Dikkat: X_train ve y_train değişkenleri olmalı
-y_pred = lda_classifier.predict(X_test_lda)
+# # LDA sonucunu görselleştirme
+# plt.figure(figsize=(8, 6))
+# for i in range(len(iris.target_names)):
+#     plt.scatter(X_train_lda[y_train == i, 0],
+#                 X_train_lda[y_train == i, 1],
+#                 label=iris.target_names[i])
 
-# Adım 6: Model doğruluğunun hesaplanması
-accuracy = accuracy_score(y_test, y_pred)
-print(f'LDA Sınıflandırma Doğruluğu: {accuracy:.2f}')
+# plt.xlabel('LDA Component 1')
+# plt.ylabel('LDA Component 2')
+# plt.title('LDA on Iris Dataset')
+# plt.legend()
+# plt.show()
+
+
+# # Adım 5: LDA ile sınıflandırma
+# lda_classifier = LDA()
+# lda_classifier.fit(X_train_lda, y_train)  # Dikkat: X_train ve y_train değişkenleri olmalı
+# y_pred = lda_classifier.predict(X_test_lda)
+
+# # Adım 6: Model doğruluğunun hesaplanması
+# accuracy = accuracy_score(y_test, y_pred)
+# print(f'LDA Sınıflandırma Doğruluğu: {accuracy:.2f}')
+
+
+
+# ICA nın uygulaması
+
+
+
+
+
+
+
+
+
+
 

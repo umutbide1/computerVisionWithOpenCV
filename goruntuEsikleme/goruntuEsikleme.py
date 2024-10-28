@@ -22,9 +22,16 @@ plt.imshow(thresh_img, cmap="gray")
 plt.axis("off")           
 plt.show()                                                
 
-img=cv2.resize(img,(800,600))
-cv2.imshow("anaResim", img)
+# img=cv2.resize(img,(800,600))
+# cv2.imshow("anaResim", img)
 
 # adaptif bir eşikleme yapacağız şuan çünkü şöyle bir durum var mesela dağı ayırabildik ama bir kısmını ayırabildik hepsini
 # ayıramadık bu mantıklı değil çünkü dağın bütünlüğünü bozduk şimdi adaptif şekilde bunun bütünlüğünü bozmamaya bakalım
 
+thresh_img= cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 11, 8)
+
+plt.figure()
+plt.imshow(thresh_img, cmap="gray")
+plt.axis("off")
+plt.show()
+# harika önemli bölgeler harika bir biçimde ayrılmış biçimde 

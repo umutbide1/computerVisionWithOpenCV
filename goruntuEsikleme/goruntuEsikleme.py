@@ -19,7 +19,12 @@ _, thresh_img= cv2.threshold(img, thresh=60, maxval=255, type=cv2.THRESH_BINARY)
                                                                                         # tam tersi siyah yapardı
 plt.show()         
 plt.imshow(thresh_img, cmap="gray")
-plt.axis("off")                                                           
+plt.axis("off")           
+plt.show()                                                
 
 img=cv2.resize(img,(800,600))
 cv2.imshow("anaResim", img)
+
+# adaptif bir eşikleme yapacağız şuan çünkü şöyle bir durum var mesela dağı ayırabildik ama bir kısmını ayırabildik hepsini
+# ayıramadık bu mantıklı değil çünkü dağın bütünlüğünü bozduk şimdi adaptif şekilde bunun bütünlüğünü bozmamaya bakalım
+

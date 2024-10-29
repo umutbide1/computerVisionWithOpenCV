@@ -46,15 +46,38 @@ plt.figure(), plt.imshow(medianBlur), plt.axis("off"), plt.title("Median Blur ek
 
 
 
+def gaussianNoise(image):
+    row,col,ch= image.shape
+    mean=0
+    var=0.05
+    sigma=var**0.5
+    
+    gauss=np.random.normal(mean,sigma,(row,col,ch))
+    gauss= gauss.reshape(row,col,ch)
+    noisy= image + gauss
+    return noisy
+
+# resmi tekrar yükleyeceğim ama normalize ettikten sonra
+
+ 
+img = cv2.imread("NYC.jpg")
+img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)/255 
+
+plt.figure()
+plt.imshow(img)
+plt.axis("on")
+plt.show()
 
 
+gaussianNoisyImage = gaussianNoise(img)
 
+plt.figure()
+plt.imshow(gaussianNoisyImage)
+plt.axis("on")
+plt.title("Noise Eklenmis hali")
+plt.show()
 
-
-
-
-
-
+# Noise eklediğimiz bir görüntüyü gaussian blur yöntemi ile biraz blurunu azaltmaya çalışacağız
 
 
 

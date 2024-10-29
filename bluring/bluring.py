@@ -38,6 +38,27 @@ gaussianBlur= cv2.GaussianBlur(img, (3,3), sigmaX=7)
 plt.figure(), plt.imshow(gaussianBlur), plt.axis("off"), plt.title("gaussian blurlu durum"), plt.show()
 
 
+# medyan blur, bu da ortalama yerine kutucukların medyanını alacaktır
+
+medianBlur= cv2.medianBlur(img, (3))
+plt.figure(), plt.imshow(medianBlur), plt.axis("off"), plt.title("Median Blur eklenmis durum"), plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

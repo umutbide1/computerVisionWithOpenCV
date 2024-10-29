@@ -23,13 +23,19 @@ img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
 plt.figure()
 plt.imshow(img)
-plt.axis("off")
+plt.axis("on")
 plt.show()
 
+# ortalama bluring i gerçekleyelim
+
+img2 = cv2.blur(img, (3,3))
+plt.figure() , plt.imshow(img2) , plt.axis("off") ,plt.title("ortalama blur"), plt.show()
 
 
+# gauss noise ekleme kısmı 
 
-
+gaussianBlur= cv2.GaussianBlur(img, (3,3), sigmaX=7)
+plt.figure(), plt.imshow(gaussianBlur), plt.axis("off"), plt.title("gaussian blurlu durum"), plt.show()
 
 
 

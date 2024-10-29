@@ -79,9 +79,13 @@ plt.show()
 
 # Noise eklediğimiz bir görüntüyü gaussian blur yöntemi ile biraz blurunu azaltmaya çalışacağız
 
+gb=cv2.GaussianBlur(gaussianNoisyImage, (3,3), sigmaX=7)
 
-
-
+plt.figure()
+plt.imshow(gb)
+plt.axis("on")
+plt.title("Noise un giderilmis hali")
+plt.show()
 
 
 

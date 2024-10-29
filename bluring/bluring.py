@@ -87,14 +87,43 @@ plt.axis("on")
 plt.title("Noise un giderilmis hali")
 plt.show()
 
+# tuz karabiber görüntüsü oluşturulması ve giderilmesi
+
+def saltPepperNoise(image):
+    row, col, ch = image.shape
+    s_vs_p = 0.5
+    amount = 0.004
+    noisy = np.copy(image)
+
+    # Salt mode (beyaz noktacıklar)
+    num_salt = int(np.ceil(amount * image.size * s_vs_p))
+    coords = [np.random.randint(0, i - 1, num_salt) for i in image.shape[:2]]
+    noisy[coords[0], coords[1], :] = 1  # tüm kanallar için beyaz
+
+    # Pepper mode (siyah noktacıklar)
+    num_pepper = int(np.ceil(amount * image.size * (1.0 - s_vs_p)))
+    coords = [np.random.randint(0, i - 1, num_pepper) for i in image.shape[:2]]
+    noisy[coords[0], coords[1], :] = 0  # tüm kanallar için siyah
+
+    return noisy
 
 
+saltPepperNoisyImage=saltPepperNoise(img)
+
+plt.figure()
+plt.imshow(saltPepperNoisyImage)
+plt.axis("on")
+plt.title("salt ve pepper eklenmis goruntu")
+plt.show()
 
 
+# bu noisler dan kurtulmak adına şimdi medyan bluring işlemini gerçekleştireceğiz
 
+  
+medianBlur2= cv2.medianBlur(saltPepperNoisyImage.astype(np.float32), ksize=3)
+plt.figure(), plt.imshow(medianBlur2), plt.axis("off"), plt.title("Salt and Pepeer Cleaned Status"), plt.show()
 
-
-
+# harika burada medyan blur kullanılarak görümtüdeki az sayıda beyaz ve siyah noktacık yok oldu
 
 
 

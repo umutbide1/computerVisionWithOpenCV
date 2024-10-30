@@ -12,9 +12,9 @@
 import cv2
 import matplotlib.pyplot as plt 
 import numpy as np
-import warnings
-
-warnings.filterwarnings("ignore")
+import warnings # hata ve uyarıları bastırmaya yönelik kütüphanenin eklenmesi
+ 
+warnings.filterwarnings("ignore") # bu fonksiyon özelleştirilebilir nitelikte ama genelde hataları bastırmada kullanılıyor
 
 # bluring detay azaltılır ve gürültü engellenir 
 
